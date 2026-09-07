@@ -5,7 +5,6 @@ services:
     labels:
       - "io.portainer.hidden=true"
     restart: always
-    profiles: [portainer]
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - portainer_data:/data
