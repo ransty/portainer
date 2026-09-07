@@ -1,0 +1,17 @@
+services:
+  portainer:
+    image: portainer/portainer-ce:lts
+    container_name: portainer
+    labels:
+      - "io.portainer.hidden=true"
+    restart: always
+    profiles: [portainer]
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - portainer_data:/data
+    ports:
+      - "127.0.0.1:9443:9443"
+
+volumes:
+  portainer_data:
+    external: true
